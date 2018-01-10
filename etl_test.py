@@ -2,6 +2,8 @@ from pyspark import SparkContext
 from pyspark import SparkConf
 from pyspark.sql import HiveContext
 from pyspark.sql import SQLContext
+from pyspark.sql.types import *
+from pyspark.sql.functions import *
         
 conf = SparkConf().set("spark.executor.memory", "2g") \
   .set("spark.dynamicAllocation.initialExecutors", "2") \
@@ -17,11 +19,6 @@ sqlContext = SQLContext(sparkContext)
 hiveContext = HiveContext(sparkContext)
 
 
-
-from pyspark.sql import HiveContext
-from pyspark.sql import SQLContext
-from pyspark.sql.types import *
-from pyspark.sql.functions import *
 import os
 import pandas as pd
 
